@@ -51,10 +51,7 @@ func Validate(source *Source) error {
 		return fmt.Errorf("username is required")
 	}
 
-	// Validate password (can be empty, but warn)
-	if source.Password == "" {
-		return fmt.Errorf("password is required")
-	}
+	// Password is optional (e.g. local dev with no password)
 
 	return nil
 }

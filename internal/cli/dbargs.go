@@ -283,11 +283,6 @@ func validateDatabaseArgs(args *DatabaseArgs) error {
 		}
 		return fmt.Errorf("database name is required (use -D)")
 	}
-	if args.Password == "" {
-		if args.Engine == source.DatabaseTypePostgreSQL {
-			return fmt.Errorf("password is required (set PGPASSWORD environment variable or use -W)")
-		}
-		return fmt.Errorf("password is required (use -ppassword)")
-	}
+	// Password is optional (e.g. local dev with no password)
 	return nil
 }
