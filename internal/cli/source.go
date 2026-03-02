@@ -97,7 +97,7 @@ func addSource() error {
 	if src.Type == source.DatabaseTypePostgreSQL {
 		defaultPort = "5432"
 	} else if src.Type == source.DatabaseTypeSeekDB {
-		defaultPort = "3306" // Adjust as needed
+		defaultPort = "2881"
 	}
 
 	host, err := ui.ShowInput("Enter host", "localhost")
